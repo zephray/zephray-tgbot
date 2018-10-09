@@ -5,17 +5,17 @@ exports = module.exports = {
     label: '人类的本质就是个复读机。',
     handler: service.echo
   },
-  bash: {
-    label: '顾名思义。不过只有主人能用。',
-    handler: service.bash
+  exec: {
+    label: '执行Shell命令。',
+    handler: service.exec
+  },
+  ping: {
+    label: '本群日常：🤔-NO PROXY- ✈️',
+    handler: service.ping
   },
   node: {
     label: '来测试一下你的 js 代码吧。',
     handler: service.node
-  },
-  id: {
-    label: '查看你的 ID。',
-    handler: service.id
   },
   shutup: {
     label: '让我收回我的上一句发言。',

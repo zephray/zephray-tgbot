@@ -9,7 +9,7 @@ let alarmUtils = require('./alarm-utils')
 
 exports = module.exports = {};
 
-exports.bash = async function (msg) {
+exports.exec = async function (msg) {
   utils.verify(msg.from.id);
   return await new Promise((resolve, reject) => {
     exec(msg.command, (err, stdout, stderr) => {
@@ -23,8 +23,8 @@ exports.echo = async function (msg) {
   return msg.command;
 }
 
-exports.id = function (msg) {
-  return `user ID: ${msg.from.id}\nchat ID: ${msg.chat.id}`;
+exports.ping = function (msg) {
+  return `Pong!\nuser ID: ${msg.from.id}\nchat ID: ${msg.chat.id}`;
 };
 
 exports.node = function (msg) {

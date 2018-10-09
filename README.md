@@ -1,8 +1,11 @@
-kasora-tgbot
-=========
+zephray-tgbot
+=============
 
-My stupid Bot
+# Overview
 
+My stupid Bot. This is a GNU/kasora-tgbot(TM) fork.
+
+# Usage
 
 ### public
 - /id Get your id
@@ -11,3 +14,7 @@ My stupid Bot
 
 ### private
 - /bash Run bash on your server
+
+# License
+
+MIT
