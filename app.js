@@ -14,19 +14,23 @@ Object.keys(routes).forEach((routeName) => {
   let route = routes[routeName]
   bot.onText(RegExp(`^\/${routeName}`), async (msg) => {
     await mongo.prepare();
+
     msg.code = routeName;
     msg.command = utils.getCommand(msg.text);
     msg.bot = bot;
+
     console.log(`username: `, msg.from.username);
     console.log(`command : `, msg.text);
+
     try {
       let output = await route.handler(msg);
+      if (output === undefined) return;
       msg.response = output;
     } catch (err) {
       msg.response = `Error: ${err.message}`;
       console.error(err);
     }
-    await utils.sendMessage(msg);
+    await utils.sendMessage(msg.chat.id, msg.response, { replyTo: msg.message_id });
   })
 })
 
